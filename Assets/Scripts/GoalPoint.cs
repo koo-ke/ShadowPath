@@ -51,6 +51,7 @@ public class GoalPoint : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             cleared = true;
+            AudioManager.Instance?.PlaySE("goal");
             Debug.Log("Stage Clear!");
             OnCleared?.Invoke();
         }

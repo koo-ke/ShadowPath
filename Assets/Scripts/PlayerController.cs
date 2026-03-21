@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float prevHorizontalInput;
     private bool isGrounded;
+    private bool wasGrounded;
 
     private float coyoteTimer;
     private float jumpBufferTimer;
@@ -87,7 +88,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        wasGrounded = isGrounded;
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
+        if (!wasGrounded && isGrounded)
+            AudioManager.Instance?.PlaySE("land");
+
         prevHorizontalInput = horizontalInput;
         horizontalInput = inputActions.Player.Move.ReadValue<Vector2>().x;
 
@@ -119,6 +125,7 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpBufferTimer = 0f;
             coyoteTimer = 0f;
+            AudioManager.Instance?.PlaySE("jump");
         }
 
         DetectQuickStep();
@@ -142,6 +149,7 @@ public class PlayerController : MonoBehaviour
             isQuickStepping = true;
             quickStepBrakeTimer = quickStepBrakeDuration;
             lastTapDirection = 0f;  // リセットして連続発動防止
+            AudioManager.Instance?.PlaySE("quickstep");
             OnQuickStep?.Invoke(direction);
         }
         else

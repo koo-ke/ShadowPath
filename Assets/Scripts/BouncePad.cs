@@ -33,6 +33,7 @@ public class BouncePad : MonoBehaviour
                 if (playerRb != null)
                     playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, bounceForce);
 
+                AudioManager.Instance?.PlaySE("bounce");
                 StopAllCoroutines();
                 StartCoroutine(SquishAnimation());
                 return;

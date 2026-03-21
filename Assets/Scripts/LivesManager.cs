@@ -43,6 +43,7 @@ public class LivesManager : MonoBehaviour
 
         CurrentLives--;
         OnLivesChanged?.Invoke(CurrentLives);
+        AudioManager.Instance?.PlaySE("death");
 
         if (CurrentLives <= 0)
             OnGameOver?.Invoke();

@@ -51,6 +51,7 @@ public class CrumblingPlatform : MonoBehaviour
     private IEnumerator CrumbleRoutine()
     {
         isCrumbling = true;
+        AudioManager.Instance?.PlaySE("crumble");
 
         // 点滅で予兆を演出
         float elapsed = 0f;
