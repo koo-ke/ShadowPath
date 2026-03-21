@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour
 
     public event System.Action<float> OnQuickStep;  // 引数: 移動方向 (-1 or 1)
 
+    public bool inputEnabled = true;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -88,6 +90,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (!inputEnabled) return;
+
         wasGrounded = isGrounded;
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -161,6 +165,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!inputEnabled)
+        {
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+            return;
+        }
+
         ApplyMovement();
         ApplyGravity();
     }

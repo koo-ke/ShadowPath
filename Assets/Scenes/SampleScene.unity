@@ -928,6 +928,51 @@ MonoBehaviour:
   heartSize: 36
   heartSpacing: 10
   topLeftOffset: {x: 20, y: -20}
+--- !u!1 &1524096891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1524096893}
+  - component: {fileID: 1524096892}
+  m_Layer: 0
+  m_Name: StageIntroUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1524096892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524096891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb8ddf5e7345448a89a4c26d82829e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StageIntroUI
+  stageTitle: Stage 1
+--- !u!4 &1524096893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524096891}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.54373, y: 1.1558, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!213 &1665605871
 Sprite:
   m_ObjectHideFlags: 0
@@ -1382,6 +1427,7 @@ MonoBehaviour:
     m_Bits: 8
   groundCheck: {fileID: 957475339}
   groundCheckRadius: 0.2
+  inputEnabled: 1
 --- !u!114 &2116891899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1423,3 +1469,4 @@ SceneRoots:
   - {fileID: 834224118}
   - {fileID: 1018842940}
   - {fileID: 687903488}
+  - {fileID: 1524096893}

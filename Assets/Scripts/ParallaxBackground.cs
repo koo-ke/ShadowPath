@@ -69,6 +69,13 @@ public class ParallaxBackground : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (cameraTransform == null)
+        {
+            var cam = Camera.main;
+            if (cam == null) return;
+            cameraTransform = cam.transform;
+        }
+
         for (int i = 0; i < layerTransforms.Length; i++)
         {
             float newX = cameraTransform.position.x * (1f - layers[i].parallaxSpeed);
