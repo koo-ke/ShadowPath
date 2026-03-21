@@ -492,6 +492,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   target: {fileID: 2116891897}
   followSpeed: 5
+--- !u!1 &603431295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 603431297}
+  - component: {fileID: 603431296}
+  m_Layer: 0
+  m_Name: StageManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &603431296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603431295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c32d343c3ce45089028ecad827cdd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StageManager
+--- !u!4 &603431297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603431295}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.54373, y: 1.1558, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,6 +1057,7 @@ GameObject:
   - component: {fileID: 2116891894}
   - component: {fileID: 2116891898}
   - component: {fileID: 2116891899}
+  - component: {fileID: 2116891900}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1181,7 +1226,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
+  groundAcceleration: 15
+  airAcceleration: 8
   jumpForce: 10
+  coyoteTime: 0.1
+  jumpBufferTime: 0.1
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
+  quickStepForce: 15
+  quickStepCooldown: 0.3
+  doubleTapWindow: 0.3
+  quickStepBrakeDuration: 0.2
+  quickStepBrakeMultiplier: 3
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1201,6 +1257,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RespawnManager
   spawnPoint: {x: 0, y: 1}
   deathY: -10
+--- !u!114 &2116891900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116891893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b40aa52a4d164d35ada4650aedc9e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuickStepEffect
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1212,3 +1280,4 @@ SceneRoots:
   - {fileID: 329311966}
   - {fileID: 2039517814}
   - {fileID: 22651663}
+  - {fileID: 603431297}

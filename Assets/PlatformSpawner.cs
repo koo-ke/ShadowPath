@@ -12,11 +12,26 @@ public class PlatformSpawner : MonoBehaviour
 
     [SerializeField] private PlatformData[] platforms = new PlatformData[]
     {
-        new PlatformData { name = "Platform_1", x =  5f, y = -1f, width = 3f, height = 0.5f },
-        new PlatformData { name = "Platform_2", x = 10f, y =  0f, width = 3f, height = 0.5f },
-        new PlatformData { name = "Platform_3", x = 15f, y = -2f, width = 3f, height = 0.5f },
-        new PlatformData { name = "Platform_4", x = 20f, y =  1f, width = 3f, height = 0.5f },
-        new PlatformData { name = "Platform_5", x = 27f, y = -1f, width = 4f, height = 0.5f },
+        // ─── 導入区間（X=0〜18）: 平坦・広い足場で操作に慣れる ───
+        new PlatformData { name = "Platform_1",  x =  0f, y = -2f, width = 8f,   height = 0.5f },
+        new PlatformData { name = "Platform_2",  x = 10f, y = -2f, width = 4f,   height = 0.5f },
+        new PlatformData { name = "Platform_3",  x = 17f, y = -2f, width = 3f,   height = 0.5f },
+
+        // ─── 中盤区間（X=22〜42）: 高低差でジャンプ練習 ───
+        new PlatformData { name = "Platform_4",  x = 22f, y = -1f, width = 3f,   height = 0.5f },
+        new PlatformData { name = "Platform_5",  x = 27f, y =  0f, width = 3f,   height = 0.5f },
+        new PlatformData { name = "Platform_6",  x = 32f, y =  1f, width = 2.5f, height = 0.5f },
+        new PlatformData { name = "Platform_7",  x = 37f, y = -1f, width = 2.5f, height = 0.5f },
+        new PlatformData { name = "Platform_8",  x = 42f, y =  0f, width = 2.5f, height = 0.5f },
+
+        // ─── 後半区間（X=47〜62）: 間隔広め・クイックステップ活用 ───
+        new PlatformData { name = "Platform_9",  x = 47f, y = -1f, width = 2f,   height = 0.5f },
+        new PlatformData { name = "Platform_10", x = 52f, y =  1f, width = 2f,   height = 0.5f },
+        new PlatformData { name = "Platform_11", x = 57f, y =  0f, width = 2f,   height = 0.5f },
+        new PlatformData { name = "Platform_12", x = 62f, y = -1f, width = 2f,   height = 0.5f },
+
+        // ─── ゴール区間（X=67）: 広めの着地プラットフォーム ───
+        new PlatformData { name = "Platform_13", x = 67f, y =  0f, width = 5f,   height = 0.5f },
     };
 
     private void Start()

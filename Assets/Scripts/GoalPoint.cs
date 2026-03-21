@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class GoalPoint : MonoBehaviour
 {
+    public event System.Action OnCleared;
+
     private bool cleared = false;
     private SpriteRenderer pillarRenderer;
     private SpriteRenderer[] orbRenderers = new SpriteRenderer[4];
@@ -50,6 +52,7 @@ public class GoalPoint : MonoBehaviour
         {
             cleared = true;
             Debug.Log("Stage Clear!");
+            OnCleared?.Invoke();
         }
     }
 
