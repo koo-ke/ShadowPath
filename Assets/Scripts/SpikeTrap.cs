@@ -23,11 +23,18 @@ public class SpikeTrap : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
-        Rigidbody2D playerRb = other.GetComponent<Rigidbody2D>();
-        if (playerRb != null)
-            playerRb.linearVelocity = Vector2.zero;
-
-        other.transform.position = new Vector3(respawnPosition.x, respawnPosition.y, 0f);
+        if (LivesManager.Instance != null)
+        {
+            LivesManager.Instance.LoseLife();
+        }
+        else
+        {
+            // LivesManager未使用時のフォールバック
+            Rigidbody2D playerRb = other.GetComponent<Rigidbody2D>();
+            if (playerRb != null)
+                playerRb.linearVelocity = Vector2.zero;
+            other.transform.position = new Vector3(respawnPosition.x, respawnPosition.y, 0f);
+        }
     }
 
     private void SetupVisual()

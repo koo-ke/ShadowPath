@@ -17,11 +17,14 @@ public class RespawnManager : MonoBehaviour
     {
         if (transform.position.y < deathY)
         {
-            Respawn();
+            if (LivesManager.Instance != null)
+                LivesManager.Instance.LoseLife();
+            else
+                FallbackRespawn();
         }
     }
 
-    private void Respawn()
+    private void FallbackRespawn()
     {
         rb.linearVelocity = Vector2.zero;
         transform.position = new Vector3(spawnPoint.x, spawnPoint.y, 0f);
