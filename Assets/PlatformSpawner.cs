@@ -48,6 +48,51 @@ public class PlatformSpawner : MonoBehaviour
         {
             SpawnPlatform(platforms[i], groundLayer);
         }
+
+        // ─── ギミック生成 ───
+        SpawnMovingPlatform(new Vector2(25f, 1f),   new Vector2(3f, 0f),  new Vector2(3f, 0.5f));
+        SpawnSpike(         new Vector2(30f, -2.5f), new Vector2(2f, 0.3f));
+        SpawnSpike(         new Vector2(55f, -0.5f), new Vector2(2f, 0.3f));
+        SpawnCrumblingPlatform(new Vector2(45f, 0f), new Vector2(3f, 0.5f));
+        SpawnBouncePad(     new Vector2(50f, -2f),   new Vector2(2f, 0.3f));
+    }
+
+    // ─── ギミック生成メソッド ───
+
+    private void SpawnMovingPlatform(Vector2 position, Vector2 pointBOffset, Vector2 size)
+    {
+        GameObject obj = new GameObject("MovingPlatform");
+        obj.transform.SetParent(transform);
+        obj.transform.position = new Vector3(position.x, position.y, 0f);
+        MovingPlatform mp = obj.AddComponent<MovingPlatform>();
+        mp.Configure(pointBOffset, size);
+    }
+
+    private void SpawnSpike(Vector2 position, Vector2 size)
+    {
+        GameObject obj = new GameObject("SpikeTrap");
+        obj.transform.SetParent(transform);
+        obj.transform.position = new Vector3(position.x, position.y, 0f);
+        SpikeTrap trap = obj.AddComponent<SpikeTrap>();
+        trap.Configure(size.x, size.y);
+    }
+
+    private void SpawnCrumblingPlatform(Vector2 position, Vector2 size)
+    {
+        GameObject obj = new GameObject("CrumblingPlatform");
+        obj.transform.SetParent(transform);
+        obj.transform.position = new Vector3(position.x, position.y, 0f);
+        CrumblingPlatform cp = obj.AddComponent<CrumblingPlatform>();
+        cp.Configure(size);
+    }
+
+    private void SpawnBouncePad(Vector2 position, Vector2 size)
+    {
+        GameObject obj = new GameObject("BouncePad");
+        obj.transform.SetParent(transform);
+        obj.transform.position = new Vector3(position.x, position.y, 0f);
+        BouncePad bp = obj.AddComponent<BouncePad>();
+        bp.Configure(size);
     }
 
     private void SpawnPlatform(PlatformData data, int layer)
