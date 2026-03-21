@@ -52,6 +52,13 @@ public class PlayerController : MonoBehaviour
     public event System.Action<float> OnQuickStep;  // 引数: 移動方向 (-1 or 1)
 
     public bool inputEnabled = true;
+    public bool IsDead { get; set; }
+
+    // PlayerAnimator向け状態公開
+    public bool IsGrounded => isGrounded;
+    public float HorizontalInput => horizontalInput;
+    public float VelocityY => rb != null ? rb.linearVelocity.y : 0f;
+    public bool IsQuickStepping => isQuickStepping;
 
     private void Awake()
     {

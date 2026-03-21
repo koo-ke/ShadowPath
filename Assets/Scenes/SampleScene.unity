@@ -1242,6 +1242,7 @@ GameObject:
   - component: {fileID: 2116891898}
   - component: {fileID: 2116891899}
   - component: {fileID: 2116891900}
+  - component: {fileID: 2116891901}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1454,6 +1455,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b40aa52a4d164d35ada4650aedc9e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuickStepEffect
+--- !u!114 &2116891901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116891893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41dcad1c4d75440f7a6b87c3c48c665d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
+  idleSprites:
+  - {fileID: 21300000, guid: a05bc1c13beae43d48d4f8568ec38fae, type: 3}
+  - {fileID: 21300000, guid: 9ad0a9fc92ac94087824b5f4e9c06f3d, type: 3}
+  runSprites:
+  - {fileID: 21300000, guid: 1dcd8c3667a0043999dad6042a75d03b, type: 3}
+  - {fileID: 21300000, guid: f390cf2aee68849c49a2cdf920028772, type: 3}
+  - {fileID: 21300000, guid: 7ee5e3a2adb334cdeae18ef2d45fede5, type: 3}
+  - {fileID: 21300000, guid: 1fbb479c7aaff45f09870ab8a635f909, type: 3}
+  - {fileID: 21300000, guid: 476d6df8b4b0840e3918b4a177c6fd98, type: 3}
+  - {fileID: 21300000, guid: 0724ac1ca3df748c399f247c02ca48a5, type: 3}
+  jumpSprites:
+  - {fileID: 21300000, guid: 67a517100eb0046c8b7fc2873d7d86d7, type: 3}
+  - {fileID: 21300000, guid: 17023a37dae22493692c549cb853c088, type: 3}
+  fallSprites:
+  - {fileID: 21300000, guid: ddba4f4ca3fc643bab5df744f7e345ee, type: 3}
+  - {fileID: 21300000, guid: 751b18eb5d6cd463d859959b29116843, type: 3}
+  deathSprites:
+  - {fileID: 21300000, guid: feb2fa5e7e2cd4d46945fedf770782b0, type: 3}
+  - {fileID: 21300000, guid: e479221a26aea45588bd9cd9657b16ec, type: 3}
+  - {fileID: 21300000, guid: 32a75d59567fd46cd9de44f0c3e00129, type: 3}
+  dashSprites:
+  - {fileID: 21300000, guid: 49be29f5f119e4b92b2cce5a6eb5ee2d, type: 3}
+  - {fileID: 21300000, guid: d34696d3dc8b44b72b5dc551b8fccf6f, type: 3}
+  frameRate: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
